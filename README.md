@@ -22,9 +22,11 @@ where applicable.
 1. Create Cassandra tables.
 2. Load prerequisite data.
 3. Read from Cassandra table as DataFrame.
+
    This part differed from the Java example as the Java example loaded it as
    an RDD. I chose to load it as a DataFrame because DataFrames are
    essentially an RDD wrapped with a Schema.
+
 4. Perform Word Count.
    1. By using the RDD object from the DataFrame.
    2. By using the DataFrame directly.
@@ -47,8 +49,8 @@ $ spark-submit --class com.yugabyte.sample.apps.CassandraSparkWordCount \
 
 You should see the following as the output.
 
-Due to the parallel nature of Apache Spark, note that the row order may differ
-on each run. The contents should be exactly the same though.
+Due to the parallel nature of Apache Spark, the row order may differ on each
+run. The contents should be exactly the same though.
 
 ```
 +-----+-----+
